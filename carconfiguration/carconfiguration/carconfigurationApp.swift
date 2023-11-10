@@ -2,7 +2,7 @@
 //  carconfigurationApp.swift
 //  carconfiguration
 //
-//  Created by NTCHORERE on 10/11/2023.
+//  Created by NTCHORERE on 06/11/2023.
 //
 
 import SwiftUI
@@ -11,7 +11,9 @@ import SwiftUI
 struct carconfigurationApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                TuneYourVehiculeView()
+            }
         }
     }
 }

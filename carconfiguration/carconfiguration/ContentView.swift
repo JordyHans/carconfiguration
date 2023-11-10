@@ -1,24 +1,19 @@
 //
-//  ContentView.swift
+//  carconfigurationApp.swift
 //  carconfiguration
 //
-//  Created by NTCHORERE on 10/11/2023.
+//  Created by NTCHORERE on 06/11/2023.
 //
 
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+@main
+struct carconfigurationApp: App {
+    var body: some Scene {
+        WindowGroup {
+            NavigationStack {
+                TuneYourVehiculeView()
+            }
         }
-        .padding()
     }
-}
-
-#Preview {
-    ContentView()
 }

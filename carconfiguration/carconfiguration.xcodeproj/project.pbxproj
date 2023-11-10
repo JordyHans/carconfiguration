@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		ABB546612AFE6DD6001F51E4 /* carconfigurationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB546602AFE6DD6001F51E4 /* carconfigurationApp.swift */; };
-		ABB546632AFE6DD6001F51E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB546622AFE6DD6001F51E4 /* ContentView.swift */; };
 		ABB546652AFE6DD7001F51E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB546642AFE6DD7001F51E4 /* Assets.xcassets */; };
 		ABB546682AFE6DD7001F51E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB546672AFE6DD7001F51E4 /* Preview Assets.xcassets */; };
 		ABB546722AFE6DD7001F51E4 /* carconfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB546712AFE6DD7001F51E4 /* carconfigurationTests.swift */; };
 		ABB5467C2AFE6DD7001F51E4 /* carconfigurationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5467B2AFE6DD7001F51E4 /* carconfigurationUITests.swift */; };
 		ABB5467E2AFE6DD7001F51E4 /* carconfigurationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5467D2AFE6DD7001F51E4 /* carconfigurationUITestsLaunchTests.swift */; };
+		ABB5468D2AFE6FB5001F51E4 /* TuneYourVehiculeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5468C2AFE6FB5001F51E4 /* TuneYourVehiculeView.swift */; };
+		ABB5468F2AFE6FF9001F51E4 /* PurchaseDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5468E2AFE6FF9001F51E4 /* PurchaseDoneView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		ABB5465D2AFE6DD6001F51E4 /* carconfiguration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carconfiguration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB546602AFE6DD6001F51E4 /* carconfigurationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carconfigurationApp.swift; sourceTree = "<group>"; };
-		ABB546622AFE6DD6001F51E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ABB546642AFE6DD7001F51E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABB546672AFE6DD7001F51E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ABB5466D2AFE6DD7001F51E4 /* carconfigurationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = carconfigurationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +44,8 @@
 		ABB546772AFE6DD7001F51E4 /* carconfigurationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = carconfigurationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB5467B2AFE6DD7001F51E4 /* carconfigurationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carconfigurationUITests.swift; sourceTree = "<group>"; };
 		ABB5467D2AFE6DD7001F51E4 /* carconfigurationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carconfigurationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ABB5468C2AFE6FB5001F51E4 /* TuneYourVehiculeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneYourVehiculeView.swift; sourceTree = "<group>"; };
+		ABB5468E2AFE6FF9001F51E4 /* PurchaseDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDoneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +96,8 @@
 		ABB5465F2AFE6DD6001F51E4 /* carconfiguration */ = {
 			isa = PBXGroup;
 			children = (
+				ABB5468B2AFE6F8B001F51E4 /* views */,
 				ABB546602AFE6DD6001F51E4 /* carconfigurationApp.swift */,
-				ABB546622AFE6DD6001F51E4 /* ContentView.swift */,
 				ABB546642AFE6DD7001F51E4 /* Assets.xcassets */,
 				ABB546662AFE6DD7001F51E4 /* Preview Content */,
 			);
@@ -125,6 +127,15 @@
 				ABB5467D2AFE6DD7001F51E4 /* carconfigurationUITestsLaunchTests.swift */,
 			);
 			path = carconfigurationUITests;
+			sourceTree = "<group>";
+		};
+		ABB5468B2AFE6F8B001F51E4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				ABB5468C2AFE6FB5001F51E4 /* TuneYourVehiculeView.swift */,
+				ABB5468E2AFE6FF9001F51E4 /* PurchaseDoneView.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABB546632AFE6DD6001F51E4 /* ContentView.swift in Sources */,
+				ABB5468D2AFE6FB5001F51E4 /* TuneYourVehiculeView.swift in Sources */,
 				ABB546612AFE6DD6001F51E4 /* carconfigurationApp.swift in Sources */,
+				ABB5468F2AFE6FF9001F51E4 /* PurchaseDoneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
