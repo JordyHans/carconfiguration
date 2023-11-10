@@ -17,6 +17,7 @@
 		ABB5468F2AFE6FF9001F51E4 /* PurchaseDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5468E2AFE6FF9001F51E4 /* PurchaseDoneView.swift */; };
 		ABB546922AFE740E001F51E4 /* product.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB546912AFE740E001F51E4 /* product.swift */; };
 		ABB546972AFE7559001F51E4 /* stockrepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB546962AFE7559001F51E4 /* stockrepository.swift */; };
+		ABB5469D2AFE85F4001F51E4 /* ProductTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5469C2AFE85F4001F51E4 /* ProductTypeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		ABB5468E2AFE6FF9001F51E4 /* PurchaseDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDoneView.swift; sourceTree = "<group>"; };
 		ABB546912AFE740E001F51E4 /* product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = product.swift; sourceTree = "<group>"; };
 		ABB546962AFE7559001F51E4 /* stockrepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stockrepository.swift; sourceTree = "<group>"; };
+		ABB5469C2AFE85F4001F51E4 /* ProductTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTypeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				ABB5468C2AFE6FB5001F51E4 /* TuneYourVehiculeView.swift */,
 				ABB5468E2AFE6FF9001F51E4 /* PurchaseDoneView.swift */,
+				ABB5469C2AFE85F4001F51E4 /* ProductTypeView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				ABB546922AFE740E001F51E4 /* product.swift in Sources */,
 				ABB546612AFE6DD6001F51E4 /* carconfigurationApp.swift in Sources */,
 				ABB546972AFE7559001F51E4 /* stockrepository.swift in Sources */,
+				ABB5469D2AFE85F4001F51E4 /* ProductTypeView.swift in Sources */,
 				ABB5468F2AFE6FF9001F51E4 /* PurchaseDoneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

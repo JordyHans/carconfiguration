@@ -13,6 +13,8 @@ struct TuneYourVehiculeView: View {
     var total : Int
     var creditsAvailable : Int
     
+    @State var selectedOption :  Int
+    
     let repository = StockRepository.shared
     let productsType : [Product]
     let productsTires : [Product]
@@ -24,6 +26,9 @@ struct TuneYourVehiculeView: View {
         self.total = 0
         self.creditsAvailable = 215
         
+        selectedOption = 1
+
+        
         self.productsType = repository.productsType
         self.productsTires = repository.productsTires
         self.productsExtra = repository.productsExtra
@@ -32,17 +37,18 @@ struct TuneYourVehiculeView: View {
     var body: some View {
         NavigationView {
             VStack {
-            
-            }
-            NavigationLink(destination: PurchaseDoneView()) {
-                Button("Purchase") {
-                    // on click
+                ProductTypeView(stockRepository: repository)
+                NavigationLink(destination: PurchaseDoneView()) {
+                    Button("Purchase") {
+                            // on click
+                    }
+                    .frame(width: 350, height: 40)
+                    .foregroundColor(.white)
+                    .background(Color.indigo)
+                    .cornerRadius(15)
                 }
-                .frame(width: 350, height: 40)
-                .foregroundColor(.white)
-                .background(Color.indigo)
-                .cornerRadius(15)
             }
+            
         }
     }
     
