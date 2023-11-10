@@ -15,6 +15,8 @@
 		ABB5467E2AFE6DD7001F51E4 /* carconfigurationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5467D2AFE6DD7001F51E4 /* carconfigurationUITestsLaunchTests.swift */; };
 		ABB5468D2AFE6FB5001F51E4 /* TuneYourVehiculeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5468C2AFE6FB5001F51E4 /* TuneYourVehiculeView.swift */; };
 		ABB5468F2AFE6FF9001F51E4 /* PurchaseDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5468E2AFE6FF9001F51E4 /* PurchaseDoneView.swift */; };
+		ABB546922AFE740E001F51E4 /* product.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB546912AFE740E001F51E4 /* product.swift */; };
+		ABB546972AFE7559001F51E4 /* stockrepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB546962AFE7559001F51E4 /* stockrepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		ABB5467D2AFE6DD7001F51E4 /* carconfigurationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carconfigurationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ABB5468C2AFE6FB5001F51E4 /* TuneYourVehiculeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneYourVehiculeView.swift; sourceTree = "<group>"; };
 		ABB5468E2AFE6FF9001F51E4 /* PurchaseDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDoneView.swift; sourceTree = "<group>"; };
+		ABB546912AFE740E001F51E4 /* product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = product.swift; sourceTree = "<group>"; };
+		ABB546962AFE7559001F51E4 /* stockrepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stockrepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 		ABB5465F2AFE6DD6001F51E4 /* carconfiguration */ = {
 			isa = PBXGroup;
 			children = (
+				ABB546932AFE74AE001F51E4 /* repository */,
+				ABB546902AFE73FC001F51E4 /* data */,
 				ABB5468B2AFE6F8B001F51E4 /* views */,
 				ABB546602AFE6DD6001F51E4 /* carconfigurationApp.swift */,
 				ABB546642AFE6DD7001F51E4 /* Assets.xcassets */,
@@ -136,6 +142,22 @@
 				ABB5468E2AFE6FF9001F51E4 /* PurchaseDoneView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		ABB546902AFE73FC001F51E4 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				ABB546912AFE740E001F51E4 /* product.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		ABB546932AFE74AE001F51E4 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				ABB546962AFE7559001F51E4 /* stockrepository.swift */,
+			);
+			path = repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +291,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABB5468D2AFE6FB5001F51E4 /* TuneYourVehiculeView.swift in Sources */,
+				ABB546922AFE740E001F51E4 /* product.swift in Sources */,
 				ABB546612AFE6DD6001F51E4 /* carconfigurationApp.swift in Sources */,
+				ABB546972AFE7559001F51E4 /* stockrepository.swift in Sources */,
 				ABB5468F2AFE6FF9001F51E4 /* PurchaseDoneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
