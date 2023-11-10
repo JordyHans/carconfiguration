@@ -10,8 +10,30 @@ import SwiftUI
 
 struct TuneYourVehiculeView: View {
     
+    var total : Int
+    var creditsAvailable : Int
+    
+    let repository = StockRepository.shared
+    let productsType : [Product]
+    let productsTires : [Product]
+    let productsExtra : [Product]
+    
+    
+    init() {
+        
+        self.total = 0
+        self.creditsAvailable = 215
+        
+        self.productsType = repository.productsType
+        self.productsTires = repository.productsTires
+        self.productsExtra = repository.productsExtra
+    }
+    
     var body: some View {
         NavigationView {
+            VStack {
+            
+            }
             NavigationLink(destination: PurchaseDoneView()) {
                 Button("Purchase") {
                     // on click
