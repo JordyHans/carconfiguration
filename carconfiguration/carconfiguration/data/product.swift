@@ -9,7 +9,7 @@ import Foundation
 
 import SwiftUI
 
-struct Product : Identifiable {
+struct Product : Identifiable {
     let id = UUID()
     
     var name: String

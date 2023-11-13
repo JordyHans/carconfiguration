@@ -11,8 +11,12 @@ import SwiftUI
 
 struct TotalView:  View {
         
-    @Binding var total: Int
-    @Binding var creditsAvailable : Int
+    let total: Int
+    let creditsAvailable : Int
+    
+    let creditTotal = 215
+    
+    
        
     var body: some View {
         HStack(spacing: 16) {
@@ -23,7 +27,12 @@ struct TotalView:  View {
                 )
             VStack(spacing: 0) {
                 Text("\(total) credits")
-                Text("\(creditsAvailable) credits available")
+                if(creditsAvailable >= 0 && creditsAvailable <= creditTotal) {
+                    Text("\(creditTotal) credits available")
+                } else {
+                    Text("215 credits available")
+                        .foregroundStyle(.red)
+                }
             }
         }
     }

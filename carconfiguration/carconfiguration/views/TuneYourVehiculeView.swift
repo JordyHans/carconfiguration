@@ -10,9 +10,6 @@ import SwiftUI
 
 struct TuneYourVehiculeView: View {
     
-    @State var total : Int
-    @State var creditsAvailable : Int
-    
     @State var selectedOptionType: Int
     @State var selectedOptionTires: Int
     
@@ -24,11 +21,7 @@ struct TuneYourVehiculeView: View {
     let productsTires : [Product]
     let productsExtra : [Product]
     
-    
     init() {
-        
-        self.total = 0
-        self.creditsAvailable = 215
         
         self.repository = StockRepository.shared
         
@@ -42,6 +35,7 @@ struct TuneYourVehiculeView: View {
         self.productsType = repository.productsType
         self.productsTires = repository.productsTires
         self.productsExtra = repository.productsExtra
+
     }
     
     var body: some View {
@@ -97,9 +91,7 @@ struct TuneYourVehiculeView: View {
                         )
                     HStack(spacing: 16) {
                          VStack(spacing: 16) {
-                             CheckboxView(isChecked: $isCheckedNitro)/* {
-                                 checkedNNitro()
-                             }*/
+                             CheckboxView(isChecked: $isCheckedNitro)
                              CheckboxView(isChecked: $isCheckedSpoiler)
                          }
                         VStack(spacing: 10) {
@@ -108,8 +100,8 @@ struct TuneYourVehiculeView: View {
                         }
                     }
                 }
-                
-                TotalView(total: $total, creditsAvailable:  $creditsAvailable)
+
+                TotalView(total: calcTotal(), creditsAvailable:  calcCreditsAvailable())
             }
             NavigationLink(destination: PurchaseDoneView()) {
                   Button("Purchase") {}
@@ -121,12 +113,61 @@ struct TuneYourVehiculeView: View {
         }
     }
     
-    
- /*   func checkedNNitro() {
-        if (isCheckedNitro) {
-            self.total += 100
+    func calcTotal() -> Int {
+        var total = 0
+        
+        // choix du type de vehicule
+        if(selectedOptionType == 3) {
+            total += 50
         }
-    }*/
+        
+        // choix du type de pneu
+        if(selectedOptionTires == 2) {
+            total += 30
+        }
+        
+        
+        // Si on choisit le Nitro
+        if(isCheckedNitro) {
+            total += 100
+        }
+        
+        // Si on choisit le Spoiler
+        if(isCheckedSpoiler) {
+            total += 200
+        }
+        return total
+    }
+    
+    
+    
+    func calcCreditsAvailable() -> Int {
+        var credit = 215
+        
+        // choix du type de vehicule
+        if(selectedOptionType == 3) {
+            credit -= 50
+        }
+        
+        // choix du type de pneu
+        if(selectedOptionTires == 2) {
+            credit -= 30
+        }
+        
+        
+        // Si on choisit le Nitro
+        if(isCheckedNitro) {
+            credit -= 100
+        }
+        
+        // Si on choisit le Spoiler
+        if(isCheckedSpoiler) {
+            credit -= 200
+        }
+        
+        return credit
+    }
+    
 
 }
 
