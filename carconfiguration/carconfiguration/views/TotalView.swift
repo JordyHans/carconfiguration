@@ -17,10 +17,10 @@ struct TotalView:  View {
     var body: some View {
         HStack(spacing: 16) {
             Text("Total")
-                        .lineLimit(1)
-                        .truncationMode(.tail)
-                        .frame(maxWidth: .infinity,
-                               alignment: .leading)
+                .font(.title)
+                .frame(maxWidth: .infinity,
+                       alignment: .leading
+                )
             VStack(spacing: 16) {
                 Text("\(total) credits")
                 Text("\(creditsAvailable) credits available")
