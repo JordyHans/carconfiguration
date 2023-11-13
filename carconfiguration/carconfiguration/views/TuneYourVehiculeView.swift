@@ -21,6 +21,7 @@ struct TuneYourVehiculeView: View {
     let productsTires : [Product]
     let productsExtra : [Product]
     
+    
     init() {
         
         self.repository = StockRepository.shared
@@ -35,7 +36,7 @@ struct TuneYourVehiculeView: View {
         self.productsType = repository.productsType
         self.productsTires = repository.productsTires
         self.productsExtra = repository.productsExtra
-
+        
     }
     
     var body: some View {
@@ -106,10 +107,10 @@ struct TuneYourVehiculeView: View {
             NavigationLink(destination: PurchaseDoneView()) {
                   Button("Purchase") {}
                         .frame(width: 350, height: 40)
-                        .foregroundColor(.white)
-                        .background(Color.indigo)
+                        .foregroundColor(calcCreditsAvailable() >= 0 ? .white : .black)
+                        .background(calcCreditsAvailable() >= 0 ? Color.indigo : Color.gray)
                         .cornerRadius(15)
-            }
+            }.disabled(calcCreditsAvailable() < 0)
         }
     }
     
