@@ -97,8 +97,10 @@ struct TuneYourVehiculeView: View {
                         )
                     HStack(spacing: 16) {
                          VStack(spacing: 16) {
-                             CheckboxView(isChecked: $isCheckedNitro)
-                             CheckboxView(isChecked: $isCheckedNitro)
+                             CheckboxView(isChecked: $isCheckedNitro)/* {
+                                 checkedNNitro()
+                             }*/
+                             CheckboxView(isChecked: $isCheckedSpoiler)
                          }
                         VStack(spacing: 10) {
                             ProductView(product: productsExtra[0])
@@ -119,7 +121,16 @@ struct TuneYourVehiculeView: View {
         }
     }
     
+    
+ /*   func checkedNNitro() {
+        if (isCheckedNitro) {
+            self.total += 100
+        }
+    }*/
+
 }
+
+
 
 #Preview {
     TuneYourVehiculeView()

@@ -21,7 +21,7 @@ struct TotalView:  View {
                 .frame(maxWidth: .infinity,
                        alignment: .leading
                 )
-            VStack(spacing: 16) {
+            VStack(spacing: 0) {
                 Text("\(total) credits")
                 Text("\(creditsAvailable) credits available")
             }
