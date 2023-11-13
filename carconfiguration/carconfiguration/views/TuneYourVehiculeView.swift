@@ -10,12 +10,13 @@ import SwiftUI
 
 struct TuneYourVehiculeView: View {
     
-    var total : Int
-    var creditsAvailable : Int
+    @State var total : Int
+    @State var creditsAvailable : Int
     
-    @State var selectedOption :  Int
+   @State var selectedOptionType: Int
+   @State var selectedOptionTires: Int
     
-    let repository = StockRepository.shared
+    var repository : StockRepository
     let productsType : [Product]
     let productsTires : [Product]
     let productsExtra : [Product]
@@ -26,8 +27,10 @@ struct TuneYourVehiculeView: View {
         self.total = 0
         self.creditsAvailable = 215
         
-        selectedOption = 1
-
+        self.repository = StockRepository.shared
+        
+        selectedOptionType = 1
+        selectedOptionTires = 1
         
         self.productsType = repository.productsType
         self.productsTires = repository.productsTires
@@ -35,20 +38,45 @@ struct TuneYourVehiculeView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                ProductTypeView(stockRepository: repository)
-                NavigationLink(destination: PurchaseDoneView()) {
-                    Button("Purchase") {
-                            // on click
+        NavigationStack {
+            VStack(spacing: 70) {
+                VStack(spacing: 20) {
+                    Text("Type")
+                    HStack(spacing: 16) {
+                         VStack(spacing: 16) {
+                             RadioButtonView(index: 1, selectedIndex: $selectedOptionType)
+                             RadioButtonView(index: 2, selectedIndex: $selectedOptionType)
+                             RadioButtonView(index: 3, selectedIndex: $selectedOptionType)
+                         }
+                        VStack(spacing: 10) {
+                            ProductView(product: productsType[0])
+                            ProductView(product: productsType[1])
+                            ProductView(product: productsType[2])
+
+                        }
                     }
-                    .frame(width: 350, height: 40)
-                    .foregroundColor(.white)
-                    .background(Color.indigo)
-                    .cornerRadius(15)
+                }
+                VStack(spacing:20) {
+                    Text("Tires")
+                    HStack(spacing: 16) {
+                         VStack(spacing: 16) {
+                             RadioButtonView(index: 1, selectedIndex: $selectedOptionTires)
+                             RadioButtonView(index: 2, selectedIndex: $selectedOptionTires)
+                         }
+                        VStack(spacing: 10) {
+                            ProductView(product: productsTires[0])
+                            ProductView(product: productsTires[1])
+                        }
+                    }
                 }
             }
-            
+           NavigationLink(destination: PurchaseDoneView()) {
+                 Button("Purchase") {}
+                       .frame(width: 350, height: 40)
+                       .foregroundColor(.white)
+                       .background(Color.indigo)
+                       .cornerRadius(15)
+           }
         }
     }
     

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABAE32BE2B01FD8F0095B46A /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE32BD2B01FD8F0095B46A /* RadioButtonView.swift */; };
+		ABAE32C02B01FDCF0095B46A /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE32BF2B01FDCF0095B46A /* ProductView.swift */; };
+		ABAE32C22B01FEF20095B46A /* TotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE32C12B01FEF20095B46A /* TotalView.swift */; };
 		ABB546612AFE6DD6001F51E4 /* carconfigurationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB546602AFE6DD6001F51E4 /* carconfigurationApp.swift */; };
 		ABB546652AFE6DD7001F51E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB546642AFE6DD7001F51E4 /* Assets.xcassets */; };
 		ABB546682AFE6DD7001F51E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB546672AFE6DD7001F51E4 /* Preview Assets.xcassets */; };
@@ -17,7 +20,6 @@
 		ABB5468F2AFE6FF9001F51E4 /* PurchaseDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5468E2AFE6FF9001F51E4 /* PurchaseDoneView.swift */; };
 		ABB546922AFE740E001F51E4 /* product.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB546912AFE740E001F51E4 /* product.swift */; };
 		ABB546972AFE7559001F51E4 /* stockrepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB546962AFE7559001F51E4 /* stockrepository.swift */; };
-		ABB5469D2AFE85F4001F51E4 /* ProductTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB5469C2AFE85F4001F51E4 /* ProductTypeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ABAE32BD2B01FD8F0095B46A /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
+		ABAE32BF2B01FDCF0095B46A /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		ABAE32C12B01FEF20095B46A /* TotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalView.swift; sourceTree = "<group>"; };
 		ABB5465D2AFE6DD6001F51E4 /* carconfiguration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carconfiguration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB546602AFE6DD6001F51E4 /* carconfigurationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carconfigurationApp.swift; sourceTree = "<group>"; };
 		ABB546642AFE6DD7001F51E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,7 +56,6 @@
 		ABB5468E2AFE6FF9001F51E4 /* PurchaseDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDoneView.swift; sourceTree = "<group>"; };
 		ABB546912AFE740E001F51E4 /* product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = product.swift; sourceTree = "<group>"; };
 		ABB546962AFE7559001F51E4 /* stockrepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stockrepository.swift; sourceTree = "<group>"; };
-		ABB5469C2AFE85F4001F51E4 /* ProductTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTypeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +146,9 @@
 			children = (
 				ABB5468C2AFE6FB5001F51E4 /* TuneYourVehiculeView.swift */,
 				ABB5468E2AFE6FF9001F51E4 /* PurchaseDoneView.swift */,
-				ABB5469C2AFE85F4001F51E4 /* ProductTypeView.swift */,
+				ABAE32BD2B01FD8F0095B46A /* RadioButtonView.swift */,
+				ABAE32BF2B01FDCF0095B46A /* ProductView.swift */,
+				ABAE32C12B01FEF20095B46A /* TotalView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -293,11 +299,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABAE32BE2B01FD8F0095B46A /* RadioButtonView.swift in Sources */,
+				ABAE32C22B01FEF20095B46A /* TotalView.swift in Sources */,
 				ABB5468D2AFE6FB5001F51E4 /* TuneYourVehiculeView.swift in Sources */,
 				ABB546922AFE740E001F51E4 /* product.swift in Sources */,
 				ABB546612AFE6DD6001F51E4 /* carconfigurationApp.swift in Sources */,
+				ABAE32C02B01FDCF0095B46A /* ProductView.swift in Sources */,
 				ABB546972AFE7559001F51E4 /* stockrepository.swift in Sources */,
-				ABB5469D2AFE85F4001F51E4 /* ProductTypeView.swift in Sources */,
 				ABB5468F2AFE6FF9001F51E4 /* PurchaseDoneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

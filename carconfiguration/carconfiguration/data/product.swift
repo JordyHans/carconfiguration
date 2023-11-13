@@ -9,8 +9,9 @@ import Foundation
 
 import SwiftUI
 
-struct Product {
+struct Product : Identifiable {
+    let id = UUID()
+    
     var name: String
     var credits: Int
-    var isChosen : Bool // pour savoir si l'élément a été choisi
 }
