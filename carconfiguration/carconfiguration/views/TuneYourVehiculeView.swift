@@ -10,6 +10,7 @@ import SwiftUI
 
 struct TuneYourVehiculeView: View {
     
+    var index : Int
     @State var selectedOptionType: Int
     @State var selectedOptionTires: Int
     
@@ -21,13 +22,13 @@ struct TuneYourVehiculeView: View {
     let productsTires : [Product]
     let productsExtra : [Product]
     
-    
     init() {
         
         self.repository = StockRepository.shared
         
-        self.selectedOptionType = 1
-        self.selectedOptionTires = 1
+        self.index = 1
+        self.selectedOptionType = 0
+        self.selectedOptionTires = 0
         
         self.isCheckedNitro = false
         self.isCheckedSpoiler = false
@@ -36,57 +37,51 @@ struct TuneYourVehiculeView: View {
         self.productsType = repository.productsType
         self.productsTires = repository.productsTires
         self.productsExtra = repository.productsExtra
-        
+    
     }
     
     var body: some View {
-        Text("Tune your vehicule")
-            .font(.title)
-            .frame(maxWidth: .infinity,
-                   alignment: .leading
-            )
         NavigationStack {
             VStack(spacing: 50) {
                 VStack(spacing: 20) {
                     Text("Type")
-                        .font(.title)
+                        .font(.custom("MyFont", size: 25))
                         .frame(maxWidth: .infinity,
                                alignment: .leading
                         )
                     HStack(spacing: 16) {
-                         VStack(spacing: 16) {
-                             RadioButtonView(index: 1, selectedIndex: $selectedOptionType)
-                             RadioButtonView(index: 2, selectedIndex: $selectedOptionType)
-                             RadioButtonView(index: 3, selectedIndex: $selectedOptionType)
-                         }
+                        VStack(spacing: 16) {
+                            RadioButtonView(typeOrtires: 1, index: index, selectedIndex: $selectedOptionType, isCheckNitro: isCheckedNitro)
+                            RadioButtonView(typeOrtires: 1, index: index+1, selectedIndex: $selectedOptionType, isCheckNitro: isCheckedNitro)
+                            RadioButtonView(typeOrtires: 1, index: index+2, selectedIndex: $selectedOptionType, isCheckNitro: isCheckedNitro)
+                        }
                         VStack(spacing: 10) {
                             ProductView(product: productsType[0])
                             ProductView(product: productsType[1])
                             ProductView(product: productsType[2])
-
                         }
                     }
                 }
                 VStack(spacing:20) {
                     Text("Tires")
-                        .font(.title)
+                        .font(.custom("MyFont", size: 25))
                         .frame(maxWidth: .infinity,
                                alignment: .leading
                         )
                     HStack(spacing: 16) {
                          VStack(spacing: 16) {
-                             RadioButtonView(index: 1, selectedIndex: $selectedOptionTires)
-                             RadioButtonView(index: 2, selectedIndex: $selectedOptionTires)
-                         }
+                             RadioButtonView(typeOrtires: 2, index: index, selectedIndex: $selectedOptionTires, isCheckNitro: isCheckedNitro)
+                             RadioButtonView(typeOrtires: 2, index: index+1, selectedIndex: $selectedOptionTires, isCheckNitro: isCheckedNitro)
+                         }.foregroundColor(isCheckedNitro ? .gray : .black)
                         VStack(spacing: 10) {
                             ProductView(product: productsTires[0])
                             ProductView(product: productsTires[1])
                         }
                     }
-                }
+                }.foregroundColor(isCheckedNitro ? .gray : .black)
                 VStack(spacing:20) {
-                    Text("Extra")
-                        .font(.title)
+                    Text("Extras")
+                        .font(.custom("MyFont", size: 25))
                         .frame(maxWidth: .infinity,
                                alignment: .leading
                         )
@@ -101,17 +96,25 @@ struct TuneYourVehiculeView: View {
                         }
                     }
                 }
-
                 TotalView(total: calcTotal(), creditsAvailable:  calcCreditsAvailable())
             }
-            NavigationLink(destination: PurchaseDoneView()) {
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("Tune your vehicule")
+                            .font(.largeTitle.bold())
+                            .accessibilityAddTraits(/*@START_MENU_TOKEN@*/.isHeader/*@END_MENU_TOKEN@*/)
+                    }
+                }
+            NavigationLink(destination: PurchaseDoneView()
+            ) {
                   Button("Purchase") {}
                         .frame(width: 350, height: 40)
-                        .foregroundColor(calcCreditsAvailable() >= 0 ? .white : .black)
-                        .background(calcCreditsAvailable() >= 0 ? Color.indigo : Color.gray)
+                        .foregroundColor(calcCreditsAvailable() >= 0 ? .white : .black.opacity(0.6))
+                        .background(calcCreditsAvailable() >= 0 ? Color.indigo : Color.gray.opacity(0.6))
                         .cornerRadius(15)
             }.disabled(calcCreditsAvailable() < 0)
         }
+        .padding(20)
     }
     
     func calcTotal() -> Int {
@@ -131,6 +134,9 @@ struct TuneYourVehiculeView: View {
         // Si on choisit le Nitro
         if(isCheckedNitro) {
             total += 100
+            if(selectedOptionTires == 2) {
+                total -= 30
+            }
         }
         
         // Si on choisit le Spoiler
@@ -159,13 +165,15 @@ struct TuneYourVehiculeView: View {
         // Si on choisit le Nitro
         if(isCheckedNitro) {
             credit -= 100
+            if(selectedOptionTires == 2) {
+                credit += 30
+            }
         }
         
         // Si on choisit le Spoiler
         if(isCheckedSpoiler) {
             credit -= 200
         }
-        
         return credit
     }
     
