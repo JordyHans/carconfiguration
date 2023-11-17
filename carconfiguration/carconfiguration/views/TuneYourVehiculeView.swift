@@ -51,9 +51,9 @@ struct TuneYourVehiculeView: View {
                         )
                     HStack(spacing: 16) {
                         VStack(spacing: 16) {
-                            RadioButtonView(typeOrtires: 1, index: index, selectedIndex: $selectedOptionType, isCheckNitro: isCheckedNitro)
-                            RadioButtonView(typeOrtires: 1, index: index+1, selectedIndex: $selectedOptionType, isCheckNitro: isCheckedNitro)
-                            RadioButtonView(typeOrtires: 1, index: index+2, selectedIndex: $selectedOptionType, isCheckNitro: isCheckedNitro)
+                            RadioButtonView(typeOrtires: 1, index: index, selectedIndex: $selectedOptionType, selectedOptionType: selectedOptionType)
+                            RadioButtonView(typeOrtires: 1, index: index+1, selectedIndex: $selectedOptionType, selectedOptionType: selectedOptionType)
+                            RadioButtonView(typeOrtires: 1, index: index+2, selectedIndex: $selectedOptionType, selectedOptionType: selectedOptionType)
                         }
                         VStack(spacing: 10) {
                             ProductView(product: productsType[0])
@@ -70,15 +70,15 @@ struct TuneYourVehiculeView: View {
                         )
                     HStack(spacing: 16) {
                          VStack(spacing: 16) {
-                             RadioButtonView(typeOrtires: 2, index: index, selectedIndex: $selectedOptionTires, isCheckNitro: isCheckedNitro)
-                             RadioButtonView(typeOrtires: 2, index: index+1, selectedIndex: $selectedOptionTires, isCheckNitro: isCheckedNitro)
+                             RadioButtonView(typeOrtires: 2, index: index, selectedIndex: $selectedOptionTires, selectedOptionType: selectedOptionType)
+                             RadioButtonView(typeOrtires: 2, index: index+1, selectedIndex: $selectedOptionTires, selectedOptionType: selectedOptionType)
                          }.foregroundColor(isCheckedNitro ? .gray : .black)
                         VStack(spacing: 10) {
                             ProductView(product: productsTires[0])
                             ProductView(product: productsTires[1])
                         }
                     }
-                }.foregroundColor(isCheckedNitro ? .gray : .black)
+                }.foregroundColor(selectedOptionType == 3 ? .gray : .black)
                 VStack(spacing:20) {
                     Text("Extras")
                         .font(.custom("MyFont", size: 25))
@@ -105,7 +105,16 @@ struct TuneYourVehiculeView: View {
                             .accessibilityAddTraits(/*@START_MENU_TOKEN@*/.isHeader/*@END_MENU_TOKEN@*/)
                     }
                 }
-            NavigationLink(destination: PurchaseDoneView()
+            NavigationLink(destination: PurchaseDoneView(
+                total : calcTotal(),
+                creditsAvailable: calcCreditsAvailable(),
+                calcCreditsAvailable: calcCreditsAvailable(),
+                selectedOptionType : selectedOptionType,
+                selectedOptionTires: selectedOptionTires,
+                isCheckedNitro : isCheckedNitro,
+                isCheckedSpoiler: isCheckedSpoiler
+
+            )
             ) {
                   Button("Purchase") {}
                         .frame(width: 350, height: 40)
@@ -122,6 +131,9 @@ struct TuneYourVehiculeView: View {
         
         // choix du type de vehicule
         if(selectedOptionType == 3) {
+            if(selectedOptionTires == 2) {
+                total -= 30
+            }
             total += 50
         }
         
@@ -134,9 +146,6 @@ struct TuneYourVehiculeView: View {
         // Si on choisit le Nitro
         if(isCheckedNitro) {
             total += 100
-            if(selectedOptionTires == 2) {
-                total -= 30
-            }
         }
         
         // Si on choisit le Spoiler
@@ -153,6 +162,9 @@ struct TuneYourVehiculeView: View {
         
         // choix du type de vehicule
         if(selectedOptionType == 3) {
+            if(selectedOptionTires == 2) {
+                credit += 30
+            }
             credit -= 50
         }
         
@@ -165,9 +177,6 @@ struct TuneYourVehiculeView: View {
         // Si on choisit le Nitro
         if(isCheckedNitro) {
             credit -= 100
-            if(selectedOptionTires == 2) {
-                credit += 30
-            }
         }
         
         // Si on choisit le Spoiler

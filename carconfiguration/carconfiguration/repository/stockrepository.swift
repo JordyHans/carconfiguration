@@ -12,13 +12,13 @@ class StockRepository {
     static let shared = StockRepository()
     
     private(set) var productsType = [
-        Product(name: "Car  ", credits: 0),
-        Product(name: "MotorBike  ", credits: 0),
+        Product(name: "Car", credits: 0),
+        Product(name: "MotorBike", credits: 0),
         Product(name: "Hovercraft", credits: 50)
     ]
     
     private(set) var productsTires = [
-        Product(name: "Hard tires  ", credits: 0),
+        Product(name: "Hard tires", credits: 0),
         Product(name: "Soft tires", credits: 30)
         
     ]
