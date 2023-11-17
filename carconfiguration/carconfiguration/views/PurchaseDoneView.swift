@@ -24,7 +24,7 @@ struct PurchaseDoneView: View {
         VStack(spacing: 10) {
             Text("Total amount: \(total) credits - Purchased: \(whichType())\(whichType() == "" ? "" : ",") \(whichTires())\(whichTires() == "" ? "" : ",") \(whichNitro())\(whichNitro() == "" ? "" : ",") \(whichSpoiler())  - Credits left: \(creditsAvailable)")
             Button("Copy to clipboard") {
-                // on click
+                copyToClipboard()
             }   .frame(width: 350, height: 40)
                 .foregroundColor(.white)
                 .background(Color.indigo)
@@ -93,4 +93,11 @@ struct PurchaseDoneView: View {
         }
         return chaine
     }
+    
+    func copyToClipboard(){
+        @State var text: String = "Total amount: \(total) credits - Purchased: \(whichType())\(whichType() == "" ? "" : ",") \(whichTires())\(whichTires() == "" ? "" : ",") \(whichNitro())\(whichNitro() == "" ? "" : ",") \(whichSpoiler())  - Credits left: \(creditsAvailable)"
+        UIPasteboard.general.string = text
+        
+    }
+    
 }
